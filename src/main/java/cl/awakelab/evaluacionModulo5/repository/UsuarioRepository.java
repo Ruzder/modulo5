@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import cl.awakelab.evaluacionModulo5.entity.Usuario;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
 }

@@ -9,74 +9,74 @@ import javax.persistence.Table;
 @Table(name ="usuario")
 public class Usuario {
 	
+	
 	@Id
-	@Column(name="runUser")
-	private int runUserEntity;
+	@Column(name="runuser")
+	private int id;
 	
-	@Column(name="nomUser")
-	private String nomUserEntity;
+	@Column(name="nomuser")
+	private String nom;
 	
-	@Column(name="apeUser")
-	private String apeUserEntity;
+	@Column(name="apeuser")
+	private String ape;
 	
-	@Column(name="fecUser")
-	private String fecUserEntity;
+	@Column(name="fecuser")
+	private String fec;
 	
-	@Column(name="tipUser")
-	private int tipUserEntity;
+	@Column(name="tipuser")
+	private int tip;
 
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(int runUserEntity, String nomUserEntity, String apeUserEntity, String fecUserEntity,
-			int tipUserEntity) {
+	public Usuario(int id, String nom, String ape, String fec, int tip) {
 		super();
-		this.runUserEntity = runUserEntity;
-		this.nomUserEntity = nomUserEntity;
-		this.apeUserEntity = apeUserEntity;
-		this.fecUserEntity = fecUserEntity;
-		this.tipUserEntity = tipUserEntity;
+		this.id = id;
+		this.nom = nom;
+		this.ape = ape;
+		this.fec = fec;
+		this.tip = tip;
 	}
 
-	public int getRunUserEntity() {
-		return runUserEntity;
+	public int getId() {
+		return id;
 	}
 
-	public void setRunUserEntity(int runUserEntity) {
-		this.runUserEntity = runUserEntity;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getNomUserEntity() {
-		return nomUserEntity;
+	public String getNom() {
+		return nom;
 	}
 
-	public void setNomUserEntity(String nomUserEntity) {
-		this.nomUserEntity = nomUserEntity;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
-	public String getApeUserEntity() {
-		return apeUserEntity;
+	public String getApe() {
+		return ape;
 	}
 
-	public void setApeUserEntity(String apeUserEntity) {
-		this.apeUserEntity = apeUserEntity;
+	public void setApe(String ape) {
+		this.ape = ape;
 	}
 
-	public String getFecUserEntity() {
-		return fecUserEntity;
+	public String getFec() {
+		return fec;
 	}
 
-	public void setFecUserEntity(String fecUserEntity) {
-		this.fecUserEntity = fecUserEntity;
+	public void setFec(String fec) {
+		this.fec = fec;
 	}
 
-	public int getTipUserEntity() {
-		return tipUserEntity;
+	public int getTip() {
+		return tip;
 	}
 
-	public void setTipUserEntity(int tipUserEntity) {
-		this.tipUserEntity = tipUserEntity;
+	public void setTip(int tip) {
+		this.tip = tip;
 	}
 }

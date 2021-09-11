@@ -12,6 +12,8 @@
 		<intercept-url pattern="/" access="permitAll" />
 		<intercept-url pattern="/listarCapacitacion" access="hasAnyAuthority('ADMIN', 'USER')" />
 		<intercept-url pattern="/editar/*" access="hasAnyAuthority('ADMIN')" />
+		<intercept-url pattern="/listarUsuario" access="hasAnyAuthority('ADMIN')" />
+	
 
 		<form-login login-page="/login"
 			authentication-failure-url="/error"

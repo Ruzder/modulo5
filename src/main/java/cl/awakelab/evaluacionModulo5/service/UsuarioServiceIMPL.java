@@ -9,11 +9,12 @@ import cl.awakelab.evaluacionModulo5.entity.Usuario;
 import cl.awakelab.evaluacionModulo5.repository.UsuarioRepository;
 
 @Service
-public class UsuarioServiceIMPL implements IUsuarioService {
-
+public class UsuarioServiceIMPL implements IUsuarioService{
+	
 	
 	@Autowired
 	UsuarioRepository er;
+	
 	@Override
 	public List<Usuario> readAll() {
 		// TODO Auto-generated method stub
@@ -23,7 +24,7 @@ public class UsuarioServiceIMPL implements IUsuarioService {
 	@Override
 	public void create(Usuario u) {
 		// TODO Auto-generated method stub
-		er.save(u);
+		
 	}
 
 }

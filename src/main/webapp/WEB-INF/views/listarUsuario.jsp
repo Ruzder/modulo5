@@ -1,12 +1,16 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
+	pageEncoding="ISO-8859-1"%>
+<!doctype html>
+<html lang="es">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Listar Usuario</title>
-
-
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -21,6 +25,7 @@
 <link
 	href="${pageContext.request.getContextPath()}/resources/css/estiloNEW.css"
 	rel="stylesheet" type="text/css">
+<title>Listar Usuario</title>
 </head>
 <body>
 	<header
@@ -37,25 +42,25 @@
 
 	<a href="${pageContext.request.contextPath}/logout">Salir</a>
 	<!-- cuerpo de trabajo  -->
-	<h4>Listado de Usuarios registrados</h4>
+	<h4>Listado de Usuarios</h4>
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th scope="col">RUN Usuario</th>
-				<th scope="col">Nombre Usuario</th>
-				<th scope="col">Apellido Usuario</th>
-				<th scope="col">Fecha Usuario</th>
-				<th scope="col">Tipo Usuario</th>
+				<th scope="col">RUN</th>
+				<th scope="col">NOMBRE</th>
+				<th scope="col">APELLIDO</th>
+				<th scope="col">FECHA</th>
+				<th scope="col">TIPO</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="u" items="${lista}">
 				<tr>
-					<th><c:out value="${u.getRunUserEntity()}"></c:out></th>
-					<td><c:out value="${u.getNomUserEntity()}"></c:out></td>
-					<td><c:out value="${u.getApeUserEntity()}"></c:out></td>
-					<td><c:out value="${u.getFecUserEntity()}"></c:out></td>
-					<td><c:out value="${u.getTipUserEntity()}"></c:out></td>
+					<th><c:out value="${u.getId()}"></c:out></th>
+					<td><c:out value="${u.getNom()}"></c:out></td>
+					<td><c:out value="${u.getApe()}"></c:out></td>
+					<td><c:out value="${u.getFec()}"></c:out></td>
+					<td><c:out value="${u.getTip()}"></c:out></td>		
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -72,9 +77,6 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
 		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 		crossorigin="anonymous"></script>
-
-</body>
-</html>
 
 </body>
 </html>
