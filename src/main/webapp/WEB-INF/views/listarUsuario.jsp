@@ -6,6 +6,7 @@
 <!doctype html>
 <html lang="es">
 
+
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -43,6 +44,8 @@
 	<a href="${pageContext.request.contextPath}/logout">Salir</a>
 	<!-- cuerpo de trabajo  -->
 	<h4>Listado de Usuarios</h4>
+	
+	
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -51,9 +54,10 @@
 				<th scope="col">APELLIDO</th>
 				<th scope="col">FECHA</th>
 				<th scope="col">TIPO</th>
+				<th scope="col">Acciones</th>
 			</tr>
 		</thead>
-		<tbody>
+		<%-- <tbody>
 			<c:forEach var="u" items="${lista}">
 				<tr>
 					<th><c:out value="${u.getId()}"></c:out></th>
@@ -63,8 +67,42 @@
 					<td><c:out value="${u.getTip()}"></c:out></td>		
 				</tr>
 			</c:forEach>
+		</tbody> --%>
+		
+		<tbody>
+			<c:forEach var="u" items="${lista}">
+				<tr>
+					<th scope="row"><c:out value="${u.getId()}"></c:out></th>
+					<td><c:out value="${u.getNom()}"></c:out></td>
+					<td><c:out value="${u.getApe()}"></c:out></td>
+					<td><c:out value="${u.getFec()}"></c:out></td>
+
+					<c:choose>
+						<c:when test="${u.getTip() == 1}">
+							<td>Cliente</td>
+						</c:when>
+
+						<c:when test="${u.getTip() == 2}">
+							<td>Profesional</td>
+						</c:when>
+
+						<c:when test="${u.getTip() == 3}">
+							<td>Administrativo</td>
+						</c:when>
+					</c:choose>
+					<c:url var="editar" value="/EditUsuario">
+						<c:param name="run" value="${u.getId()}"></c:param>
+						<c:param name="tipo" value="${u.getTip()}"></c:param>
+						<c:param name="accion" value="edit"></c:param>
+					</c:url>
+					<td><a href="${pageContext.request.getContextPath()}/editarUsuario/${u.getId()}">Editar</a></td>
+				</tr>
+			</c:forEach>
 		</tbody>
+
+
 	</table>
+	
 	<jsp:include page="footer.jsp"></jsp:include>
 	<!-- <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
