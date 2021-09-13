@@ -9,7 +9,8 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/registro.css">
+
+    <link href="${pageContext.request.getContextPath()}/resources/css/registro.css" rel="stylesheet" type="text/css">
     <link rel="Shortcut Icon" href="IMG/safwan-mahmud-6xQFm9TFwmk-unsplash.jpg" type="image/x-icon" />
     <!-- <script src="JS/registro.js"></script> -->
 </head>

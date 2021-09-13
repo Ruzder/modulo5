@@ -26,7 +26,7 @@
 <link
 	href="${pageContext.request.getContextPath()}/resources/css/estiloNEW.css"
 	rel="stylesheet" type="text/css">
-<title>Listar Usuario</title>
+<title>Listar admi</title>
 </head>
 <body>
 	<header
@@ -43,65 +43,43 @@
 
 	<a href="${pageContext.request.contextPath}/logout">Salir</a>
 	<!-- cuerpo de trabajo  -->
-	<h4>Listado de Usuarios</h4>
+	<h4>Listado de admi</h4>
 	
 	
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th scope="col">RUN</th>
-				<th scope="col">NOMBRE</th>
-				<th scope="col">APELLIDO</th>
-				<th scope="col">FECHA</th>
-				<th scope="col">TIPO</th>
-				<th scope="col">Acciones</th>
+				<th scope="col">id adm</th>
+				<th scope="col">nombre supervisor</th>
+				<th scope="col">area</th>
+				<th scope="col">experiencia</th>
+				<th scope="col">funcion</th>
+				<th scope="col">ID</th>
+				<th scope="col">nombre</th>
+				<th scope="col">Apellido</th>
+				<th scope="col">fecha</th>
+				<th scope="col">tipo</th>
+
 			</tr>
 		</thead>
-		<%-- <tbody>
-			<c:forEach var="u" items="${lista}">
-				<tr>
-					<th><c:out value="${u.getId()}"></c:out></th>
-					<td><c:out value="${u.getNom()}"></c:out></td>
-					<td><c:out value="${u.getApe()}"></c:out></td>
-					<td><c:out value="${u.getFec()}"></c:out></td>
-					<td><c:out value="${u.getTip()}"></c:out></td>		
-				</tr>
-			</c:forEach>
-		</tbody> --%>
-		
 		<tbody>
-			<c:forEach var="u" items="${lista}">
+			<c:forEach var="a" items="${lista}">
 				<tr>
-					<th scope="row"><c:out value="${u.getId()}"></c:out></th>
-					<td><c:out value="${u.getNom()}"></c:out></td>
-					<td><c:out value="${u.getApe()}"></c:out></td>
-					<td><c:out value="${u.getFec()}"></c:out></td>
-
-					<c:choose>
-						<c:when test="${u.getTip() == 1}">
-							<td>Cliente</td>
-							<td><a href="${pageContext.request.getContextPath()}/editarCliente/${u.getId()}">Editar</a></td>
-						</c:when>
-						
-						<c:when test="${u.getTip() == 2}">
-							<td>Administrativo</td>
-							<td><a href="${pageContext.request.getContextPath()}/editarAdministrativo/${u.getId()}">Editar</a></td>
-						</c:when>
-
-						<c:when test="${u.getTip() == 3}">
-							<td>Profesional</td>
-							<td><a href="${pageContext.request.getContextPath()}/editarProfesional/${u.getId()}">Editar</a></td>
-						</c:when>
-
-						
-					</c:choose>
+					<th><c:out value="${a.getIdAdm()}"></c:out></th>
+					<td><c:out value="${a.getNomAdm()}"></c:out></td>
+					<td><c:out value="${a.getAreAdm()}"></c:out></td>
+					<td><c:out value="${a.getExpAdm()}"></c:out></td>
+					<td><c:out value="${a.getFunAdm()}"></c:out></td>
+					<td><c:out value="${a.getUsuario().getId()}"></c:out></td>	
+					<td><c:out value="${a.getUsuario().getNom()}"></c:out></td>
+					<td><c:out value="${a.getUsuario().getApe()}"></c:out></td>
+					<td><c:out value="${a.getUsuario().getFec()}"></c:out></td>
+					<td><c:out value="${a.getUsuario().getTip()}"></c:out></td>	
 				</tr>
 			</c:forEach>
 		</tbody>
-
-
 	</table>
-	
+
 	<jsp:include page="footer.jsp"></jsp:include>
 	<!-- <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">

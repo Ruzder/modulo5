@@ -18,91 +18,74 @@ public class Administrativo {
 	
 	@Id
 	@Column(name="idadm")
-	private int id;
+	private int idAdm;
 	
 	@Column(name="nomsupadm")
-	private String nomSup;
+	private String nomAdm;
 	
 	@Column(name="areaadm")
-	private String area;
+	private String areAdm;
 	
 	@Column(name="expadm")
 	private String expAdm;
 	
 	@Column(name="funadm")
 	private String funAdm;
-	
-	@OneToOne(fetch = FetchType.EAGER)
+
+	@OneToOne  
 	@JoinColumn(name="usuario_runuser")
-	private Usuario usuario;
-	/*
-	 * @ManyToOne
-	 * 
-	 * @JoinColumn(name="usuario_runuser", referencedColumnName = "usuario_runuser")
-	 * Usuario usuario; // tiene que ser declarado como objeto
-	 */
+	 private Usuario usuario;
+	 
+	
+	  
 
 	public Administrativo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public Administrativo(int id, String nomSup, String area, String expAdm, String funAdm, Usuario usuario) {
+	public Administrativo(int idAdm, String nomAdm, String areAdm, String expAdm, String funAdm, Usuario usuario) {
 		super();
-		this.id = id;
-		this.nomSup = nomSup;
-		this.area = area;
+		this.idAdm = idAdm;
+		this.nomAdm = nomAdm;
+		this.areAdm = areAdm;
 		this.expAdm = expAdm;
 		this.funAdm = funAdm;
 		this.usuario = usuario;
 	}
-
-	public int getId() {
-		return id;
+	public int getIdAdm() {
+		return idAdm;
 	}
-
-	public void setId(int id) {
-		this.id = id;
+	public void setIdAdm(int idAdm) {
+		this.idAdm = idAdm;
 	}
-
-	public String getNomSup() {
-		return nomSup;
+	public String getNomAdm() {
+		return nomAdm;
 	}
-
-	public void setNomSup(String nomSup) {
-		this.nomSup = nomSup;
+	public void setNomAdm(String nomAdm) {
+		this.nomAdm = nomAdm;
 	}
-
-	public String getArea() {
-		return area;
+	public String getAreAdm() {
+		return areAdm;
 	}
-
-	public void setArea(String area) {
-		this.area = area;
+	public void setAreAdm(String areAdm) {
+		this.areAdm = areAdm;
 	}
-
 	public String getExpAdm() {
 		return expAdm;
 	}
-
 	public void setExpAdm(String expAdm) {
 		this.expAdm = expAdm;
 	}
-
 	public String getFunAdm() {
 		return funAdm;
 	}
-
 	public void setFunAdm(String funAdm) {
 		this.funAdm = funAdm;
 	}
-
 	public Usuario getUsuario() {
 		return usuario;
 	}
-
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}	 
-	
+	}
 }

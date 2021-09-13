@@ -1,8 +1,11 @@
 package cl.awakelab.evaluacionModulo5.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,19 +28,23 @@ public class Usuario {
 	
 	@Column(name="tipuser")
 	private int tip;
-
+	
+	@OneToMany(mappedBy ="usuario")
+	private List<Administrativo> administrativo;
+	
 	public Usuario() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Usuario(int id, String nom, String ape, String fec, int tip) {
+	public Usuario(int id, String nom, String ape, String fec, int tip, List<Administrativo> administrativo) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.ape = ape;
 		this.fec = fec;
 		this.tip = tip;
+		this.administrativo = administrativo;
 	}
 
 	public int getId() {
@@ -79,4 +86,14 @@ public class Usuario {
 	public void setTip(int tip) {
 		this.tip = tip;
 	}
+
+	public List<Administrativo> getAdministrativo() {
+		return administrativo;
+	}
+
+	public void setAdministrativo(List<Administrativo> administrativo) {
+		this.administrativo = administrativo;
+	}
+	
+	
 }

@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cl.awakelab.evaluacionModulo5.entity.Administrativo;
+import cl.awakelab.evaluacionModulo5.entity.Cliente;
+import cl.awakelab.evaluacionModulo5.entity.Profesional;
 import cl.awakelab.evaluacionModulo5.entity.Usuario;
 import cl.awakelab.evaluacionModulo5.repository.UsuarioRepository;
 
@@ -14,7 +17,7 @@ public class UsuarioServiceIMPL implements IUsuarioService{
 	
 	@Autowired
 	UsuarioRepository er;
-	
+
 	@Override
 	public List<Usuario> readAll() {
 		// TODO Auto-generated method stub
@@ -25,6 +28,9 @@ public class UsuarioServiceIMPL implements IUsuarioService{
 	public void create(Usuario u) {
 		// TODO Auto-generated method stub
 		
-	}
+	}	
 
 }
+	
+	
+
