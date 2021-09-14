@@ -36,7 +36,7 @@ public class AdministrativoServiceIMPL implements IAdministrativoService{
 	}
 
 	@Override
-	public Administrativo admiFk(int fk) {
+	public Administrativo readOneFk(int fk) {
 		// TODO Auto-generated method stub
 		return er.findByFk(fk);
 	}

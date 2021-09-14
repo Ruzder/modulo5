@@ -34,10 +34,7 @@ public class Administrativo {
 
 	@OneToOne  
 	@JoinColumn(name="usuario_runuser")
-	 private Usuario usuario;
-	 
-	
-	  
+	 private Usuario usuario;  
 
 	public Administrativo() {
 		super();

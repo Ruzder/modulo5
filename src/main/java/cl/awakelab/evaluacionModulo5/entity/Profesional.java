@@ -28,7 +28,7 @@ public class Profesional {
 	@Column(name="fecpro")
 	private String fecPro;
 	
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne
 	@JoinColumn(name="usuario_runuser")
 	private Usuario usuario;
 

@@ -2,103 +2,99 @@ package cl.awakelab.evaluacionModulo5.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="Cliente")
+@Table(name ="cliente")
 public class Cliente {
-	
 	
 	@Id
 	@Column(name="rutcli")
-	private int rutEntity;
+	private int idCli;
 	
 	@Column(name="dircli")
-	private String dirEntity;
+	private String dirCli;
 	
 	@Column(name="comcli")
-	private String comEntity;
+	private String comCli;
 	
 	@Column(name="canempcli")
-	private int canEntity;
+	private int canCli;
 	
 	@Column(name="telcli")
-	private int telEntity;
+	private String telCli;
 	
 	@Column(name="razsoccli")
-	private int razEntity;
+	private String razCli;
 	
-	@OneToOne(fetch = FetchType.EAGER)
+	@OneToOne
 	@JoinColumn(name="usuario_runuser")
 	private Usuario usuario;
 
 	public Cliente() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Cliente(int rutEntity, String dirEntity, String comEntity, int canEntity, int telEntity, int razEntity,
-			Usuario usuario) {
+	public Cliente(int idCli, String dirCli, String comCli, int canCli, String telCli, String razCli, Usuario usuario) {
 		super();
-		this.rutEntity = rutEntity;
-		this.dirEntity = dirEntity;
-		this.comEntity = comEntity;
-		this.canEntity = canEntity;
-		this.telEntity = telEntity;
-		this.razEntity = razEntity;
+		this.idCli = idCli;
+		this.dirCli = dirCli;
+		this.comCli = comCli;
+		this.canCli = canCli;
+		this.telCli = telCli;
+		this.razCli = razCli;
 		this.usuario = usuario;
 	}
 
-	public int getRutEntity() {
-		return rutEntity;
+	public int getIdCli() {
+		return idCli;
 	}
 
-	public void setRutEntity(int rutEntity) {
-		this.rutEntity = rutEntity;
+	public void setIdCli(int idCli) {
+		this.idCli = idCli;
 	}
 
-	public String getDirEntity() {
-		return dirEntity;
+	public String getDirCli() {
+		return dirCli;
 	}
 
-	public void setDirEntity(String dirEntity) {
-		this.dirEntity = dirEntity;
+	public void setDirCli(String dirCli) {
+		this.dirCli = dirCli;
 	}
 
-	public String getComEntity() {
-		return comEntity;
+	public String getComCli() {
+		return comCli;
 	}
 
-	public void setComEntity(String comEntity) {
-		this.comEntity = comEntity;
+	public void setComCli(String comCli) {
+		this.comCli = comCli;
 	}
 
-	public int getCanEntity() {
-		return canEntity;
+	public int getCanCli() {
+		return canCli;
 	}
 
-	public void setCanEntity(int canEntity) {
-		this.canEntity = canEntity;
+	public void setCanCli(int canCli) {
+		this.canCli = canCli;
 	}
 
-	public int getTelEntity() {
-		return telEntity;
+	public String getTelCli() {
+		return telCli;
 	}
 
-	public void setTelEntity(int telEntity) {
-		this.telEntity = telEntity;
+	public void setTelCli(String telCli) {
+		this.telCli = telCli;
 	}
 
-	public int getRazEntity() {
-		return razEntity;
+	public String getRazCli() {
+		return razCli;
 	}
 
-	public void setRazEntity(int razEntity) {
-		this.razEntity = razEntity;
+	public void setRazCli(String razCli) {
+		this.razCli = razCli;
 	}
 
 	public Usuario getUsuario() {
